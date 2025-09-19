@@ -1,0 +1,49 @@
+@use "app/styles/mixins" as *;
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn {
+  height: 50px;
+  width: 50px;
+  color: var(--dark-blue);
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid rgb(from var(--dark-blue) r g b / 50%);;
+  border-radius: 50%;
+  opacity: 1;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: auto;
+  }
+
+  &:not(:disabled):hover {
+    background: white;
+    transition: background-color 150ms ease;
+  }
+}
+
+.counter {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+@include mobile {
+  .controls {
+    gap: 8px;
+  }
+
+  .btn {
+    height: 25px;
+    width: 25px;
+    font-size: 15px;
+  }
+
+  .counter {
+    margin-bottom: 10px;
+  }
+}

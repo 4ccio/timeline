@@ -1,0 +1,57 @@
+@use "app/styles/mixins" as *;
+
+$text-line-height: 160px;
+
+.years {
+  position: relative;
+  top: var(--backline-level);
+}
+
+.lineHorizontal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: var(--backline-color);
+  transform: translateY(-50%);
+  z-index: -10;
+}
+
+.numbers {
+  position: absolute;
+  top: calc(($text-line-height / -2));
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  width: 100%;
+  font-weight: bold;
+
+  @include responsive-font(56px, 150px, 200px);
+
+  line-height: $text-line-height;
+  z-index: -10;
+
+}
+
+.yearEnd {
+  display: inline-block;
+  color: #5D5FEF;
+}
+
+.yearStart {
+  display: inline-block;
+  color: #EF5DA8;
+}
+
+@include mobile {
+  .lineHorizontal {
+    display: none;
+  }
+
+  .numbers {
+    line-height: 72px;
+    justify-content: space-around;
+    opacity: 1;
+  }
+}

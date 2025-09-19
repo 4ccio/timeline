@@ -1,0 +1,41 @@
+$sm: 768px;
+$md: 1280px;
+$ld: 1280px;
+
+@mixin mobile {
+  @media (max-width: $sm - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $sm) and (max-width: $md - 1px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin responsive-font($mobile-size, $tablet-size: null, $desktop-size: null) {
+  font-size: $mobile-size;
+
+  @if $tablet-size {
+    @include tablet {
+      font-size: $tablet-size;
+    }
+  }
+
+  @if $desktop-size {
+    @include desktop {
+      font-size: $desktop-size;
+    }
+  } @else if $tablet-size {
+    @include desktop {
+      font-size: $tablet-size;
+    }
+  }
+}

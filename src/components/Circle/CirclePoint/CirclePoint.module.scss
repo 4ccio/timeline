@@ -1,0 +1,21 @@
+.point {
+  position: absolute;
+  background: var(--dark-blue);
+  border-radius: 50%;
+  border: 1px solid var(--dark-blue);
+  height: 6px;
+  width: 6px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.pointNumber {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--dark-blue);
+  pointer-events: none;
+}

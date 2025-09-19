@@ -1,0 +1,21 @@
+@use 'app/styles/mixins' as *;
+
+.backlineCircle {
+  position: absolute;
+  width: 530px;
+  height: 530px;
+  border-radius: 50%;
+  border: 1px solid var(--backline-color);
+  top: var(--backline-level);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@include  mobile {
+  .backlineCircle {
+    display: none;
+  }
+}
